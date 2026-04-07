@@ -1,16 +1,133 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>大阪行程測試</title>
+    <title>大阪 6 天 5 夜行程助手</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #f3f4f6; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+        .day-card { display: none; }
+        .day-card.active { display: block; }
+    </style>
 </head>
-<body style="text-align:center; font-family:sans-serif; padding-top:50px;">
-    <h1>🇯🇵 大阪行程 App 測試成功！</h1>
-    <p>如果你看到這個畫面，代表網站已經上線了。</p>
-    <div style="background:#f0f0f0; padding:20px; border-radius:10px; display:inline-block;">
-        <p>匯率：0.203</p>
-        <p>帳號：much760</p>
-    </div>
+<body class="pb-24">
+    <header class="bg-rose-500 text-white p-5 sticky top-0 z-50 shadow-lg">
+        <h1 class="text-xl font-bold text-center">🇯🇵 大阪深度旅遊行程</h1>
+        <div class="flex justify-between mt-2 text-sm font-medium">
+            <span>匯率: 0.203</span>
+            <span>預算: NT$37,725</span>
+        </div>
+    </header>
+
+    <nav class="flex overflow-x-auto bg-white border-b sticky top-[84px] z-40 shadow-sm">
+        <button onclick="showDay(1)" class="flex-1 py-3 px-4 text-rose-500 border-b-4 border-rose-500 font-bold transition-all" id="btn1">D1</button>
+        <button onclick="showDay(2)" class="flex-1 py-3 px-4 text-gray-400 font-bold transition-all" id="btn2">D2</button>
+        <button onclick="showDay(3)" class="flex-1 py-3 px-4 text-gray-400 font-bold transition-all" id="btn3">D3</button>
+        <button onclick="showDay(4)" class="flex-1 py-3 px-4 text-gray-400 font-bold transition-all" id="btn4">D4</button>
+        <button onclick="showDay(5)" class="flex-1 py-3 px-4 text-gray-400 font-bold transition-all" id="btn5">D5</button>
+        <button onclick="showDay(6)" class="flex-1 py-3 px-4 text-gray-400 font-bold transition-all" id="btn6">D6</button>
+    </nav>
+
+    <main class="p-4" id="content">
+        <div id="day1" class="day-card active animate-fade-in">
+            <div class="bg-white rounded-2xl shadow-md p-5 mb-4 border-l-8 border-rose-400">
+                <h2 class="text-lg font-bold text-rose-600 mb-3 border-b pb-2 flex items-center">🗓️ 10/17 (六) 抵達與度假模式</h2>
+                <ul class="space-y-4">
+                    <li class="flex gap-4"><span class="font-mono font-bold text-gray-300">09:00</span> <span>CI 152 桃園機場 T2 起飛</span></li>
+                    <li class="flex gap-4"><span class="font-mono font-bold text-gray-300">12:50</span> <span>抵達關西機場</span></li>
+                    <li class="flex gap-4"><span class="font-mono font-bold text-gray-300">14:30</span> <span>搭乘南海特急 Rapi:t (雙K劃位)</span></li>
+                    <li class="flex gap-4"><span class="font-mono font-bold text-gray-300">16:00</span> <span class="text-blue-600 font-bold">入住：巴厘安度假飯店 (難波)</span></li>
+                    <li class="flex gap-4"><span class="font-mono font-bold text-gray-300">18:00</span> <span class="bg-yellow-100 px-1 font-semibold">晚餐：串燒料理</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="day2" class="day-card animate-fade-in">
+            <div class="bg-white rounded-2xl shadow-md p-5 mb-4 border-l-8 border-orange-400">
+                <h2 class="text-lg font-bold text-orange-600 mb-3 border-b pb-2 flex items-center">⛩️ 10/18 (日) 傳統與夜景</h2>
+                <ul class="space-y-4">
+                    <li class="flex gap-4"><span class="font-mono font-bold text-gray-300">09:15</span> <span>木津市場 (早午餐)</span></li>
+                    <li class="flex gap-4"><span class="font-mono font-bold text-gray-300">11:30</span> <span class="text-green-700 font-bold">大鳥大社 (入手透明御守)</span></li>
+                    <li class="flex gap-4"><span class="font-mono font-bold text-gray-300">15:00</span> <span>四天王寺 & 天王寺動物園</span></li>
+                    <li class="flex gap-4"><span class="font-mono font-bold text-gray-300">18:00</span> <span class="text-rose-600 font-bold">阿倍野展望台 (絕美日落)</span></li>
+                    <li class="flex gap-4"><span class="font-mono font-bold text-gray-300">20:00</span> <span class="bg-yellow-100 px-1 font-semibold">晚餐：膳屋 (Zenya)</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="day3" class="day-card animate-fade-in">
+            <div class="bg-white rounded-2xl shadow-md p-5 mb-4 border-l-8 border-blue-400">
+                <h2 class="text-lg font-bold text-blue-600 mb-3 border-b pb-2 flex items-center">🌊 10/19 (一) 港灣浪漫巡禮</h2>
+                <ul class="space-y-4">
+                    <li class="flex gap-4"><span class="font-mono font-bold text-gray-300">09:30</span> <span>海遊館 (必看鯨鯊/需預約)</span></li>
+                    <li class="flex gap-4"><span class="font-mono font-bold text-gray-300">13:30</span> <span>聖瑪麗亞號 觀光船</span></li>
+                    <li class="flex gap-4"><span class="font-mono font-bold text-gray-300">15:30</span> <span>天保山大摩天輪</span></li>
+                    <li class="flex gap-4"><span class="font-mono font-bold text-gray-300">18:30</span> <span class="bg-yellow-100 px-1 font-semibold text-rose-500 font-bold">晚餐：鰻魚飯 (大阪站 Izumo)</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="day4" class="day-card animate-fade-in">
+            <div class="bg-white rounded-2xl shadow-md p-5 mb-4 border-l-8 border-red-400">
+                <h2 class="text-lg font-bold text-red-600 mb-3 border-b pb-2 flex items-center">👺 10/20 (二) 勝運與繁華街</h2>
+                <ul class="space-y-4">
+                    <li class="flex gap-4"><span class="font-mono font-bold text-gray-300">10:00</span> <span class="text-red-600 font-bold">勝尾寺 (滿山不倒翁)</span></li>
+                    <li class="flex gap-4"><span class="font-mono font-bold text-gray-300">14:30</span> <span class="bg-yellow-100 px-1 font-semibold">午餐：神座拉麵 (梅田)</span></li>
+                    <li class="flex gap-4"><span class="font-mono font-bold text-gray-300">16:30</span> <span>梅田空中庭園 (17:00前入場)</span></li>
+                    <li class="flex gap-4"><span class="font-mono font-bold text-gray-300">21:00</span> <span class="bg-yellow-100 px-1 font-semibold">消夜：鳥貴族 (燒鳥拼盤)</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="day5" class="day-card animate-fade-in">
+            <div class="bg-white rounded-2xl shadow-md p-5 mb-4 border-l-8 border-emerald-400">
+                <h2 class="text-lg font-bold text-emerald-600 mb-3 border-b pb-2 flex items-center">🦁 10/21 (三) 最後採買衝刺</h2>
+                <ul class="space-y-4">
+                    <li class="flex gap-4"><span class="font-mono font-bold text-gray-300">10:00</span> <span>黑門市場 (最後美食衝刺)</span></li>
+                    <li class="flex gap-4"><span class="font-mono font-bold text-gray-300">12:00</span> <span>難波八阪神社 (獅子頭舞台)</span></li>
+                    <li class="flex gap-4"><span class="font-mono font-bold text-gray-300">14:00</span> <span class="text-blue-600 font-bold">入住：奧德西斯套房飯店 (臨空城)</span></li>
+                    <li class="flex gap-4"><span class="font-mono font-bold text-gray-300">16:00</span> <span>臨空城 Outlet & TRIAL 超市</span></li>
+                    <li class="flex gap-4"><span class="font-mono font-bold text-gray-300">19:00</span> <span class="bg-yellow-100 px-1 font-semibold">晚餐：大起水產 迴轉壽司</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="day6" class="day-card animate-fade-in">
+            <div class="bg-white rounded-2xl shadow-md p-5 mb-4 border-l-8 border-gray-400">
+                <h2 class="text-lg font-bold text-gray-600 mb-3 border-b pb-2 flex items-center">✈️ 10/22 (四) 期待下次旅行</h2>
+                <ul class="space-y-4">
+                    <li class="flex gap-4"><span class="font-mono font-bold text-gray-300">09:00</span> <span>飯店早餐 / 整理行李</span></li>
+                    <li class="flex gap-4"><span class="font-mono font-bold text-gray-300">11:00</span> <span>飯店退房 / 前往機場 T1</span></li>
+                    <li class="flex gap-4"><span class="font-mono font-bold text-gray-300">14:00</span> <span>CI 153 回桃園 (16:00 抵達)</span></li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="fixed bottom-0 w-full bg-white/90 backdrop-blur-md border-t p-4 flex gap-3 shadow-[0_-5px_15px_rgba(0,0,0,0.05)]">
+        <a href="https://www.google.com/maps/dir/?api=1&destination=34.665,135.501" target="_blank" class="flex-1 bg-blue-600 text-white text-center py-3 rounded-xl font-bold shadow-md hover:bg-blue-700 transition-all">🗺️ 開啟 Google 地圖</a>
+        <button onclick="alert('緊急電話: +81 6-XXXX-XXXX\n難波巴厘安: 06-XXXX-XXXX')" class="flex-1 bg-gray-800 text-white py-3 rounded-xl font-bold shadow-md hover:bg-black transition-all">📞 緊急聯絡</button>
+    </footer>
+
+    <script>
+        function showDay(day) {
+            // 切換卡片顯示
+            document.querySelectorAll('.day-card').forEach(card => card.classList.remove('active'));
+            document.getElementById('day' + day).classList.add('active');
+            
+            // 切換按鈕樣式
+            document.querySelectorAll('nav button').forEach(btn => {
+                btn.classList.remove('text-rose-500', 'border-b-4', 'border-rose-500');
+                btn.classList.add('text-gray-400');
+            });
+            const activeBtn = document.getElementById('btn' + day);
+            activeBtn.classList.remove('text-gray-400');
+            activeBtn.classList.add('text-rose-500', 'border-b-4', 'border-rose-500');
+            
+            // 自動滑回頂部
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+    </script>
 </body>
 </html>
